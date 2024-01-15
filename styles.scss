@@ -1,0 +1,26 @@
+
+@mixin circle($size) {
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+  }
+  @mixin rectangle($width, $height) {
+    width: $width;
+    height: $height;
+  }
+  @for $i from 1 through 6 {
+    .item-#{$i} {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @if $i % 2 == 0 {
+            @include circle($i * 100px);
+        }
+        @else{
+            
+            @include rectangle($i * 100px, 100px);
+        }
+        background-color: lightblue;
+        margin: 100px;
+        text-align: center;
+    }}
